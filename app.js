@@ -96,9 +96,12 @@ let randomPassword2 = "";
 let passwordLength = 15;
 let passwordGenerated = false;
 
-let password1 = document.getElementById("random-password");
-let password2 = document.getElementById("random-password2");
-let generatePasswordsBtn = document.getElementById("generate-passwords-btn");
+const password1 = document.getElementById("random-password");
+const password2 = document.getElementById("random-password2");
+const generatePasswordsBtn = document.getElementById("generate-passwords-btn");
+const copyOne = document.querySelector(".copy-one");
+const copyTwo = document.querySelector(".copy-two");
+
 generatePasswordsBtn.addEventListener("click", generatePassword);
 generatePasswordsBtn.addEventListener("click", generatePassword2);
 
@@ -107,12 +110,10 @@ function generatePassword() {
 		let randomIndex = Math.floor(Math.random() * characters.length);
 		randomPassword += characters[randomIndex];
 	}
-	console.log("random password is " + randomPassword);
+	copyOne.style.display = "block";
 	password1.textContent = randomPassword;
 	passwordGenerated = true;
-	console.log(passwordGenerated);
 	randomPassword = "";
-	console.log(randomPassword);
 }
 
 function generatePassword2() {
@@ -120,15 +121,11 @@ function generatePassword2() {
 		let randomIndex2 = Math.floor(Math.random() * characters.length);
 		randomPassword2 += characters[randomIndex2];
 	}
-	console.log(randomPassword2);
+	copyTwo.style.display = "block";
 	password2.textContent = randomPassword2;
 	passwordGenerated = true;
-	console.log(passwordGenerated);
 	randomPassword2 = "";
-	console.log(randomPassword2);
 }
-
-const copyOne = document.querySelector(".copy-one");
 
 copyOne.addEventListener("click", () => {
 	const copyPass = document.querySelector("#random-password");
@@ -136,8 +133,6 @@ copyOne.addEventListener("click", () => {
 	navigator.clipboard.writeText(pass);
 	alert("Password 1 copied to clipboard");
 });
-
-const copyTwo = document.querySelector(".copy-two");
 
 copyTwo.addEventListener("click", () => {
 	const copyPass2 = document.querySelector("#random-password2");

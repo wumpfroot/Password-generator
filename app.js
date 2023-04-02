@@ -131,12 +131,29 @@ copyOne.addEventListener("click", () => {
 	const copyPass = document.querySelector("#random-password");
 	let pass = copyPass.textContent;
 	navigator.clipboard.writeText(pass);
-	alert("Password 1 copied to clipboard");
+
+	Toastify({
+		text: "Password copied to the clipboard",
+		style: {
+			background: "#4adf86",
+			color: "black",
+			borderRadius: "4px",
+		},
+		duration: 3000,
+	}).showToast();
 });
 
 copyTwo.addEventListener("click", () => {
 	const copyPass2 = document.querySelector("#random-password2");
 	let pass2 = copyPass2.textContent;
 	navigator.clipboard.writeText(pass2);
-	alert("Password 2 copied to clipboard");
+	Toastify({
+		text: "Password copied to the clipboard",
+		style: {
+			background: "#4adf86",
+			color: "black",
+			borderRadius: "4px",
+		},
+		duration: 3000,
+	}).showToast();
 });

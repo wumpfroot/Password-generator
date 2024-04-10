@@ -6,11 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Password Generator</title>
 		<link rel="stylesheet" href="style.css" />
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
-		/>
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
 	</head>
 	<body>
 		<div class="container">
@@ -19,7 +15,18 @@
 				<span>random password</span>
 			</h1>
 			<p class="heading-description">Never use an insecure password again.</p>
-			<button id="generate-passwords-btn">Generate passwords</button>
+			<div class="input-fields">
+				<div>
+					<label for="password-length">Password Length:</label>
+					<input type="range" id="password-length" min="5" max="30" />
+					<span id="password-length-value">20</span>
+					<div>
+						<label for="include-special-characters">Include Special Characters:</label>
+						<input type="checkbox" id="include-special-characters" checked />
+					</div>
+				</div>
+				<button id="generate-passwords-btn">Generate passwords</button>
+			</div>
 			<hr />
 			<div class="passwords-field">
 				<div class="password-box copy1">
@@ -33,9 +40,6 @@
 			</div>
 		</div>
 		<script src="app.js"></script>
-		<script
-			type="text/javascript"
-			src="https://cdn.jsdelivr.net/npm/toastify-js"
-		></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 	</body>
 </html>
